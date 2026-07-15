@@ -7,6 +7,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import cafe.adriel.voyager.navigator.Navigator
+import cafe.adriel.voyager.transitions.SlideTransition
+import com.example.kmpdemo.ui.Day10Practice.SplashScreen
 import com.example.kmpdemo.ui.miniShopingProject.ShoppingScreen
 
 @Composable
@@ -18,8 +21,23 @@ fun App() {
                 .fillMaxSize()
                 .systemBarsPadding()
         ) {
-          //  ManageCartExample()
-            ShoppingScreen()
+            Navigator( SplashScreen()){
+                    navigator ->
+                SlideTransition(navigator)
+            }
         }
     }
 }
+
+
+
+
+
+
+//enum class Screens{
+//    Splash,
+//    Login,
+//    SignUp,
+//    ShoppingScreen,
+//    HomeScreen
+//}
